@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choosing game page</title>
+    <link rel="stylesheet" href="../style/homePage.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <ul class="navbar__menu">
+                <div class="user__erea">
+                <img id="user-icon" src="../imgs/user_icon.png" alt="user_icon">
+                <a href="homePage.html" id="user-name">שלום,</a>
+            </div>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__links" id="home-page">בית</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="highlight.html" class="navbar__links" id="highlight-page">שיאים</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="sign_in_up.html" class="navbar__links" id="sign-out">הרשמה/יציאה</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+       
+
+    <script>
+        const userName = document.getElementById('user-name')
+        const Uname = document.cookie.split('=')[1] || JSON.parse(localStorage.getItem('currentUser'));
+        userName.innerText += " " + Uname;
+        const signOut = document.getElementById('sign-out');
+
+        // <-- delete cookie when user click on sign out -->
+        signOut.addEventListener('click', () => {
+            document.cookie = "currentUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        });
+    </script>
+
+</body>
+
+</html>
