@@ -21,103 +21,242 @@
                 </div>
 
                 <li class="navbar__item">
-                    <a href="#" class="navbar__links" id="home-page">בית</a>
+                    <a href="#" class="navbar__links1" id="home-page">בית</a>
                 </li>
 
                 <li class="navbar__item">
-                    <a href="highlight.html" class="navbar__links" id="north">צפון</a>
+                    <button onclick="showContent(id)" class="navbar__links2" id="north">צפון</button>
                 </li>
                 <li class="navbar__item">
-                    <a href="highlight.html" class="navbar__links" id="south">דרום</a>
+                    <button onclick="showContent(id)" class="navbar__links2" id="south">דרום</button>
                 </li>
                 <li class="navbar__item">
-                    <a href="highlight.html" class="navbar__links" id="center">מרכז</a>
+                    <button onclick="showContent(id)" class="navbar__links2" id="center">מרכז</button>
                 </li>
                 <li class="navbar__item">
-                    <a href="highlight.html" class="navbar__links" id="jerusalem">צפון</a>
+                    <button onclick="showContent(id)" class="navbar__links2" id="jerusalem">ירושלים</button>
                 </li>
-
+                <li class="navbar__item">
+                    <button onclick="showContent(id)" class="navbar__links2" id="addNewPlace">הוספת מיקום</button>
+                </li>
                 <li class="navbar__item2">
-                    <a href="sign_in_up.html" class="navbar__links" id="sign-out">הרשמה/יציאה</a>
+                    <a href="sign_in_up.html" class="navbar__links3" id="sign-out">הרשמה/יציאה</a>
                 </li>
             </ul>
 
         </div>
     </nav>
 
-    <table>
-        <thead>
-            <th>שם המקום</th>
-            <th>כתובת</th>
-            <th>עיר</th>
-            <th>סוג</th>
-            <th>כשרות</th>
-            <th>אזור בארץ</th>
-            <th>הערות</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>מסעדת אפלרדו</td>
-                <td>דרך שלמה שמלצר 94</td>
-                <td>פתח תקווה</td>
-                <td>מסעדה</td>
-                <td>חתם סופר פ"ת</td>
-                <td>מרכז</td>
-                <td>יש איפה להסתובב בחוץ</td>
-            </tr>
-            <tr>
-                <td>הצלבנים</td>
-                <td>נמל העיר העתיקה קיסריה</td>
-                <td>קיסריה</td>
-                <td>מסעדה</td>
-                <td>בית יוסף</td>
-                <td>צפון</td>
-                <td>טיילת על הים</td>
-            </tr>
+    <template id="template_north">
+        <table>
+            <thead>
+                <th>שם המקום</th>
+                <th>כתובת</th>
+                <th>עיר</th>
+                <th>סוג</th>
+                <th>כשרות</th>
+                <th>אזור בארץ</th>
+                <th>הערות</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>קפה לנדוור</td>
+                    <td>שדרות עובד בן עמי 10</td>
+                    <td>נתניה</td>
+                    <td>בית קפה</td>
+                    <td>מהדרין</td>
+                    <td>צפון</td>
+                    <td>יש טיילת על הים</td>
+                </tr>
+                <tr>
+                    <td>הצלבנים</td>
+                    <td>נמל העיר העתיקה קיסריה</td>
+                    <td>קיסריה</td>
+                    <td>מסעדה</td>
+                    <td>בית יוסף</td>
+                    <td>צפון</td>
+                    <td>טיילת על הים</td>
+                </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template_south">
+        <table>
+            <thead>
+                <th>שם המקום</th>
+                <th>כתובת</th>
+                <th>עיר</th>
+                <th>סוג</th>
+                <th>כשרות</th>
+                <th>אזור בארץ</th>
+                <th>הערות</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>הטיילת</td>
+                    <td>טיילת אשדוד</td>
+                    <td>אשדוד</td>
+                    <td>טיילת/מצפה</td>
+                    <td></td>
+                    <td>דרום</td>
+                    <td>טיילת מטופחת לאורך הים</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template_center">
+        <table>
+            <thead>
+                <th>שם המקום</th>
+                <th>כתובת</th>
+                <th>עיר</th>
+                <th>סוג</th>
+                <th>כשרות</th>
+                <th>אזור בארץ</th>
+                <th>הערות</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>מסעדת אפלרדו</td>
+                    <td>דרך שלמה שמלצר 94</td>
+                    <td>פתח תקווה</td>
+                    <td>מסעדה</td>
+                    <td>חתם סופר פ"ת</td>
+                    <td>מרכז</td>
+                    <td>יש איפה להסתובב בחוץ</td>
+                </tr>
+                <tr>
+                    <td>פארק בלינסון</td>
+                    <td>רחוב בזל</td>
+                    <td>פתח תקווה</td>
+                    <td>פארק</td>
+                    <td></td>
+                    <td>מרכז</td>
+                    <td>פארק עם מדשאות גדולות ואגם</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template_jerusalem">
+        <table>
+            <thead>
+                <th>שם המקום</th>
+                <th>כתובת</th>
+                <th>עיר</th>
+                <th>סוג</th>
+                <th>כשרות</th>
+                <th>אזור בארץ</th>
+                <th>הערות</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>קפה רימון</td>
+                    <td>לונץ 4, פינת בן יהודה</td>
+                    <td>ירושלים</td>
+                    <td>בית קפה</td>
+                    <td>רבנות ירושלים מהדרין</td>
+                    <td>ירושלים</td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </template>
+
+
 
     <!--form for add new place-->
-    <div class="newPlaceDiv">
-        <form class="newPlace" name="myForm" action="homePage.html" onsubmit="return check()" method="post"
-        autocomplete="on">
-        <input id="name" name="name" placeholder=" שם המקום " required>
-        <br />
-        <input id="address" name="address" placeholder="כתובת " required>
-        <br />
-        <input id="city" name="city" placeholder="עיר " required>
-        <br />
-        <select id="type" name="type" placeholder="סוג " required>
-            <option value="בית קפה">בית קפה</option>
-            <option value="מסעדה">מסעדה</option>
-            <option value="פארק">פארק</option>
-            <option value="מסלול">מסלול</option>
-            <option value="מלון">מלון</option>
-            <option value="טיילת/מצפה">טיילת/מצפה</option>
-            <option value="מוזיאון">מוזיאון</option>
-            <option value="אחר">אחר</option>
+    <template id="template_addPlace">
 
-        </select>
-        <br />
-        <input id="kosher" name="kosher" placeholder="כשרות" required>
-        <br />
-        <select id="area" name="area" placeholder="אזור בארץ " required>
-            <option value="צפון">צפון</option>
-            <option value="דרום">דרום</option>
-            <option value="מרכז">מרכז</option>
-            <option value="ירושלים">ירושלים</option>
-        </select>
-        <br />
-        <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70">
+        <div class="newPlaceDiv">
+            <form class="newPlace" name="myForm" action="homePage.html" onsubmit="return check()" method="post"
+                autocomplete="on">
+                <input id="name" name="name" placeholder=" שם המקום " required>
+                <br />
+                <input id="address" name="address" placeholder="כתובת " required>
+                <br />
+                <input id="city" name="city" placeholder="עיר " required>
+                <br />
+                <select id="type" name="type" placeholder="סוג " required>
+                    <option value="בית קפה">בית קפה</option>
+                    <option value="מסעדה">מסעדה</option>
+                    <option value="פארק">פארק</option>
+                    <option value="מסלול">מסלול</option>
+                    <option value="מלון">מלון</option>
+                    <option value="טיילת/מצפה">טיילת/מצפה</option>
+                    <option value="מוזיאון">מוזיאון</option>
+                    <option value="אחר">אחר</option>
+
+                </select>
+                <br />
+                <input id="kosher" name="kosher" placeholder="כשרות" required>
+                <br />
+                <select id="area" name="area" placeholder="אזור בארץ " required>
+                    <option value="צפון">צפון</option>
+                    <option value="דרום">דרום</option>
+                    <option value="מרכז">מרכז</option>
+                    <option value="ירושלים">ירושלים</option>
+                </select>
+                <br />
+                <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70">
               </textarea>
-        <br />
-        <button id="submit" type="submit">הוסף מיקום לרשימה</button>
-        <br />
-    </form>
-    </div>
-    
+                <br />
+                <button id="submit" type="submit">הוסף מיקום לרשימה</button>
+                <br />
+            </form>
+        </div>
+    </template>
+
+
+
     <script>
+        var north = false;
+        var south = false;
+        var center = false;
+        var jerusalem = false;
+        var pageNow;
+        var addNewPlace = false;
+        var temp;
+        var clon;
+
+        function showContent(area) {
+            if (area === 'north' && pageNow != 'north') {
+                pageNow = 'north'
+                temp = document.getElementById("template_north");
+                clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+            if (area === 'south' && pageNow != 'south') {
+                pageNow = 'south';
+                temp = document.getElementById("template_south");
+                clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+            if (area === 'center' && pageNow != 'center') {
+                pageNow = 'center';
+                temp = document.getElementById("template_center");
+                clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+            if (area === 'jerusalem' && pageNow != 'jerusalem') {
+                pageNow = 'jerusalem';
+                temp = document.getElementById("template_jerusalem");
+                clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+            if (area === 'addNewPlace' && pageNow != 'addNewPlace') {
+                pageNow = 'addNewPlace';
+                temp = document.getElementById("template_addPlace");
+                clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+        }
+
         const userName = document.getElementById('user-name')
         const Uname = document.cookie.split('=')[1] || JSON.parse(localStorage.getItem('currentUser'));
         userName.innerText += " " + Uname;
