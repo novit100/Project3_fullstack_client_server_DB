@@ -2,57 +2,25 @@ class FXMLHttpRequest {
 
     constructor(args) {
         if (args) {
-            let { url, data, done, progress, duration
+            let { method, key, data, readyState, duration
             } = args
 
-            this.url = url
+            this.method = method
+            this.key = key
             this.data = data
-            this.done = done
-            this.progress = progress
+            this.readyState = readyState
             this.duration = duration
         }
-
-        this.open()
+        this.sendWIthNetwork()
     }
 
-    open(method, key, value = '') {
-        if (method === 'GET') {
-            return localStorage.getItem(key);
-        }
-
-        if (method === 'GETall') {
-            var record = [];
-            for (i = 0; i < localStorage.length; i++) {
-                record[i] = (localStorage.getItem(key[i]));
-            }
-        }
-
-        if (method === 'POST') {
-            localStorage.setItem(key, JSON.stringify(value));
-        }
-
-        if (method === 'PUT') {
-            localStorage.setItem(key, JSON.stringify(value));
-        }
-        if (method === 'DELETE') {
-            localStorage.removeItem(key);
-
-        }
+    sendWIthNetwork() {
+        var netRequest = new Network(this.method, this.key, this.data, this.readyState, this.duration);
+        netRequest.sendToServer();
     }
 
+    onload(){
 
-    /**
-      Get the localStorage data then put it on private variable
-    */
-    getInternStorage() {
-        if (localStorage.fakeRequest) internStorage = JSON.parse(localStorage.fakeRequest)
     }
 
-
-    /**
-      Set the localStorage data then put it on private variable
-    */
-    setLocalStorage() {
-        localStorage.fakeRequest = JSON.stringify(internStorage)
-    }
 }

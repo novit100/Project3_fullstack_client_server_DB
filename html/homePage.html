@@ -169,16 +169,15 @@
     </template>
 
 
-
     <!--form for add new place-->
     <template id="template_addPlace">
 
         <div class="newPlaceDiv">
-            <form class="newPlace" name="myForm" action="homePage.html" onsubmit="return check()" method="post"
-                autocomplete="on">
+            <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
+                method="post" autocomplete="on">
                 <input id="name" name="name" placeholder=" שם המקום " required>
                 <br />
-                <input id="address" name="address" placeholder="כתובת " required>
+                <input id="address" name="address" placeholder="כתובת ">
                 <br />
                 <input id="city" name="city" placeholder="עיר " required>
                 <br />
@@ -194,7 +193,7 @@
 
                 </select>
                 <br />
-                <input id="kosher" name="kosher" placeholder="כשרות" required>
+                <input id="kashroot" name="kashroot" placeholder="כשרות">
                 <br />
                 <select id="area" name="area" placeholder="אזור בארץ " required>
                     <option value="צפון">צפון</option>
@@ -203,8 +202,7 @@
                     <option value="ירושלים">ירושלים</option>
                 </select>
                 <br />
-                <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70">
-              </textarea>
+                <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70"> </textarea>
                 <br />
                 <button id="submit" type="submit">הוסף מיקום לרשימה</button>
                 <br />
@@ -212,50 +210,8 @@
         </div>
     </template>
 
+    <script src="../script/homePageIndex.js">
 
-
-    <script>
-        var north = false;
-        var south = false;
-        var center = false;
-        var jerusalem = false;
-        var pageNow;
-        var addNewPlace = false;
-        var temp;
-        var clon;
-
-        function showContent(area) {
-            if (area === 'north' && pageNow != 'north') {
-                pageNow = 'north'
-                temp = document.getElementById("template_north");
-                clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-            if (area === 'south' && pageNow != 'south') {
-                pageNow = 'south';
-                temp = document.getElementById("template_south");
-                clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-            if (area === 'center' && pageNow != 'center') {
-                pageNow = 'center';
-                temp = document.getElementById("template_center");
-                clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-            if (area === 'jerusalem' && pageNow != 'jerusalem') {
-                pageNow = 'jerusalem';
-                temp = document.getElementById("template_jerusalem");
-                clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-            if (area === 'addNewPlace' && pageNow != 'addNewPlace') {
-                pageNow = 'addNewPlace';
-                temp = document.getElementById("template_addPlace");
-                clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-        }
 
         const userName = document.getElementById('user-name')
         const Uname = document.cookie.split('=')[1] || JSON.parse(localStorage.getItem('currentUser'));
