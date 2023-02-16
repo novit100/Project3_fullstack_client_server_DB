@@ -177,7 +177,7 @@ td {
 #address,
 #city,
 #type,
-#kosher,
+#kashroot,
 #area {
     box-sizing: border-box;
     height: 40px;
@@ -215,7 +215,7 @@ td {
 #address,
 #city,
 #type,
-#kosher,
+#kashroot,
 #area,
 #extra,
 #submit:hover {
