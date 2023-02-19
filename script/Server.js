@@ -1,21 +1,16 @@
 class Server {
-    constructor(args) {
-        if (args) {
-            let { method, key, data, readyState, duration
-            } = args
+    constructor(method, key, data, readyState, duration) {
+        this.method = method
+        this.key = key
+        this.data = data
+        this.readyState = readyState
+        this.duration = duration
 
-            this.method = method
-            this.key = key
-            this.data = data
-            this.readyState = readyState
-            this.duration = duration
-        }
-        this.sendToDB()
     }
 
     open() {
         var dbRequest = new DB(this.method, this.key, this.data, this.readyState, this.duration);
-        dbRequest.readyState=1;
+        dbRequest.readyState = 1;
 
         if (this.method === 'GET') {
             dbRequest.getItem();
@@ -23,10 +18,9 @@ class Server {
 
         if (this.method === 'GETall') {
             dbRequest.getAllItems();
-
         }
 
-        if (this.method === 'POST') {
+        if (this.method === "POST") {
             dbRequest.setItem();
         }
 
@@ -38,9 +32,9 @@ class Server {
         }
     }
 
-    sendBackToNetwork(){
+    sendBackToNetwork() {
         var netRequest = new Network(this.method, this.key, this.data, this.readyState, this.duration, this.responseText);
-        netRequest.readyState=3;
+        netRequest.readyState = 3;
         netRequest.sendBackToFxmlHttp();
     }
 }

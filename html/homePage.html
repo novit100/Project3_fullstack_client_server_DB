@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>choosing game page</title>
     <link rel="stylesheet" href="../style/homePage.css">
 </head>
-  
+
 <body>
     <!-- Navbar Section -->
     <nav class="navbar">
@@ -171,7 +171,9 @@
 
     <!--form for add new place-->
     <template id="template_addPlace">
-
+        <div>
+            <p id="sucsessAddPlace"></p>
+        </div>
         <div class="newPlaceDiv">
             <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
                 method="post" autocomplete="on">
@@ -223,6 +225,10 @@
             document.cookie = "currentUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         });
     </script>
+    <script src="../script/FXMLHttpRequest.js"></script>
+    <script src="../script/Network.js"></script>
+    <script src="../script/Server.js"></script>
+    <script src="../script/DataBase.js"></script>
 
 </body>
 

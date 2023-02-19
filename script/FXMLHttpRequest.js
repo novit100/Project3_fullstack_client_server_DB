@@ -1,18 +1,13 @@
 class FXMLHttpRequest {
 
-    constructor(args) {
-        if (args) {
-            let { method, key, data, readyState, duration
-            } = args
+    constructor(method, key, data, readyState, duration) {
+        this.method = method
+        this.key = key
+        this.data = data
+        this.readyState = readyState
+        this.status = 0;
+        this.duration = duration
 
-            this.method = method
-            this.key = key
-            this.data = data
-            this.readyState = readyState
-            this.status=0;
-            this.duration = duration
-        }
-        this.sendWIthNetwork()
     }
 
     sendWIthNetwork() {
@@ -22,8 +17,21 @@ class FXMLHttpRequest {
 
     onload() {
         this.readyState = 4;
-        var timeNow= new time();
-        this.duration = timeNow-this.duration;
+        const d = new Date()
+        let timeNow = d.getTime();
+        this.duration = timeNow - this.duration;
+
+        if (this.method === 'GET') {
+
+        }
+
+        if (this.method === 'GETall') {
+
+        }
+
+        if (this.method === 'POST') {
+            document.getElementById("sucsessAddPlace").innerText = "המיקום התווסף בהצלחה, תודה רבה!"
+        }
 
     }
 
