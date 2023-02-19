@@ -9,6 +9,7 @@ class FXMLHttpRequest {
             this.key = key
             this.data = data
             this.readyState = readyState
+            this.status=0;
             this.duration = duration
         }
         this.sendWIthNetwork()
@@ -19,7 +20,10 @@ class FXMLHttpRequest {
         netRequest.sendToServer();
     }
 
-    onload(){
+    onload() {
+        this.readyState = 4;
+        var timeNow= new time();
+        this.duration = timeNow-this.duration;
 
     }
 

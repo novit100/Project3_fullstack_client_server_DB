@@ -40,6 +40,7 @@ class Server {
 
     sendBackToNetwork(){
         var netRequest = new Network(this.method, this.key, this.data, this.readyState, this.duration, this.responseText);
+        netRequest.readyState=3;
         netRequest.sendBackToFxmlHttp();
     }
 }

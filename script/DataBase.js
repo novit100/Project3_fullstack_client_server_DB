@@ -15,6 +15,7 @@ class DB {
     }
 
     getItem() {
+
         this.responseText = localStorage.getItem(this.key);
     }
 
@@ -36,6 +37,7 @@ class DB {
 
     sendBackToServer() {
         var serverRequest = new Server(this.method, this.key, this.data, this.readyState, this.duration, this.responseText);
+        serverRequest.readyState=2;
         serverRequest.sendBackToNetwork();
     }
 }
