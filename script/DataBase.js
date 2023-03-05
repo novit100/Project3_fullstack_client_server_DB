@@ -1,22 +1,16 @@
 class DB {
-    constructor(args) {
-        if (args) {
-            let { method, key, data, readyState, duration
-            } = args
-
+    constructor(method, key, data, readyState, duration) {
             this.method = method
             this.key = key
             this.data = data
             this.readyState = readyState
             this.duration = duration
-            this.responseText="";
-        }
 
     }
 
     getItem() {
-
-        this.responseText = localStorage.getItem(this.key);
+        this.data = localStorage.getItem(this.key);
+        sendBackToServer();
     }
 
     getAllItems() {
@@ -24,15 +18,32 @@ class DB {
         for (i = 0; i < localStorage.length; i++) {
             record[i] = localStorage.getItem(key[i]);
         }
-        this.responseText = record;
+        this.data = record;
+        sendBackToServer();
+    }
+
+    getAllItemsAreas() {
+        var record = [];
+        var data= JSON.parse(this.data);
+        var area=data["area"];
+        for (i = 0; i < localStorage.length; i++) {
+            if(JSON.parse(localStorage.getItem(i)).area===area){
+                record[i] = localStorage.getItem(key[i]);
+            }
+        }
+        console.log(record);
+        this.data = record;
+        sendBackToServer();
     }
 
     setItem() {
         localStorage.setItem(this.key, this.data);
+        sendBackToServer();
     }
 
     deleteItem() {
         localStorage.removeItem(this.key);
+        sendBackToServer();
     }
 
     sendBackToServer() {

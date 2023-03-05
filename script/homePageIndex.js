@@ -2,7 +2,6 @@
 var data = {};
 var data1;
 var key;
-var time;
 
 function addPlace() {
     data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
@@ -16,14 +15,31 @@ function addPlace() {
     /* /קיים בדיקה אם המפתח ייחודי*/
     data1 = JSON.stringify(data);
 
-    console.log(data1);
     key = data.key;
-    time=new time();
+    const d=new Date()
+    let time =d.getTime();
 
+    var newRequest = new FXMLHttpRequest("POST", key, data1, 0, time);
+    newRequest.sendWIthNetwork();
+}
+
+function getPlace() {
+    key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
+
+    const d=new Date()
+    let time =d.getTime();
+        console.log(data1);
     var newRequest = new FXMLHttpRequest('GET', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
+function getAllPlaces() {
+
+    const d=new Date()
+    let time =d.getTime();
+        var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
+    newRequest.sendWIthNetwork();
+}
 
 /**
  readyState-
@@ -44,31 +60,37 @@ function showContent(area) {
     if (area === 'north' && pageNow != 'north') {
         pageNow = 'north'
         temp = document.getElementById("template_north");
-        /*   document.body.removeChild(document.body.lastChild);*/
+        document.body.removeChild(document.body.lastElementChild);
+
+
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
     if (area === 'south' && pageNow != 'south') {
         pageNow = 'south';
         temp = document.getElementById("template_south");
+        document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
     if (area === 'center' && pageNow != 'center') {
         pageNow = 'center';
         temp = document.getElementById("template_center");
+        document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
     if (area === 'jerusalem' && pageNow != 'jerusalem') {
         pageNow = 'jerusalem';
         temp = document.getElementById("template_jerusalem");
+        document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
     if (area === 'addNewPlace' && pageNow != 'addNewPlace') {
         pageNow = 'addNewPlace';
         temp = document.getElementById("template_addPlace");
+        document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
