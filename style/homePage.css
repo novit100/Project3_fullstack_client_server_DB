@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     scroll-behavior: smooth;
     align-content: center;
 }
@@ -86,13 +86,16 @@ body {
 
 .navbar__links3 {
     color: #377a88;
-    margin-right: 10px;
+    background-color: rgb(209, 175, 24);
+    margin-top: 10px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 125px;
+    font-size: 1.2rem;
     text-decoration: none;
-    height: 100%;
+    height: 20%;
     transition: all 0.3s ease;
 }
 
@@ -108,7 +111,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 100%;
+    width: 130%;
     height: 100%;
 }
 
@@ -119,11 +122,20 @@ body {
     padding-left: 3px;
 }
 
+/* home */
+#home_div{
+    margin-top: 0;
+    position: relative;
+}
+
+.hide {
+    display: none;
+  }
 
 
 .searchForGet {
     text-align: center;
-    margin: 60px auto 0 auto;
+    margin: 30px auto 0 auto;
     align-items: center;
     width: 100%;
     position: absolute;
@@ -132,7 +144,8 @@ body {
 #nameGet,
 #addressGet,
 #cityGet,
-#typeGetAll {
+#typeGetAll,
+#areaGetAll {
     box-sizing: border-box;
     height: 40px;
     width: 270px;
@@ -170,20 +183,22 @@ body {
     color: blacke;
 }
 
-.tableGet{
-    text-align: center;
-    margin: 170px auto 0 auto;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
 .searchForGetAll {
     text-align: center;
-    margin: 50px auto 0 auto;
+    margin: 140px auto 0 auto;
     align-items: center;
     width: 100%;
     position: absolute;
 }
+
+.tableGet{
+    text-align: center;
+    margin: 250px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
 
 
 table {
