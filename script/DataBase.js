@@ -10,7 +10,8 @@ class DB {
 
     getItem() {
         this.data = localStorage.getItem(this.key);
-        sendBackToServer();
+        //console.log("db get: "+this.data+" key: "+this.key);
+        this.sendBackToServer();
     }
 
     getAllItems() {
@@ -48,6 +49,7 @@ class DB {
 
     sendBackToServer() {
         var serverRequest = new Server(this.method, this.key, this.data, this.readyState, this.duration, this.responseText);
+        console.log("db: "+this.data);
         serverRequest.readyState=2;
         serverRequest.sendBackToNetwork();
     }

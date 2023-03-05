@@ -40,14 +40,66 @@
                     <button onclick="showContent(id)" class="navbar__links2" id="addNewPlace">הוספת מיקום</button>
                 </li>
                 <li class="navbar__item2">
-                    <a href="sign_in_up.html" class="navbar__links3" id="sign-out">הרשמה/יציאה</a>
+                    <button onclick="showContent(id)" class="navbar__links3" id="sign-out">הרשמה/יציאה</button>
                 </li>
             </ul>
 
         </div>
     </nav>
 
-    
+    <div class="searchForGet">
+        <p>חיפוש מקום לדייט: </p>
+        <form name="GetForm" method="post" action="homePage.html" onsubmit="return getPlace();" autocomplete="on">
+            <input id="nameGet" name="nameGet" placeholder=" שם המקום " required>
+            <input id="addressGet" name="addressGet" placeholder="כתובת ">
+            <input id="cityGet" name="cityGet" placeholder="עיר " required>
+            <button id="submitGet" type="submit">חיפוש</button>
+        </form>
+    </div>
+
+
+    <div class="tableGet">
+        <table>
+            <thead>
+                <th>שם המקום</th>
+                <th>כתובת</th>
+                <th>עיר</th>
+                <th>סוג</th>
+                <th>כשרות</th>
+                <th>אזור בארץ</th>
+                <th>הערות</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="tPlace"></td>
+                    <td id="tAddress"></td>
+                    <td id="tCity"></td>
+                    <td id="tType"></td>
+                    <td id="tKashroot"></td>
+                    <td id="tArea"></td>
+                    <td id="tExtra"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="searchForGetAll">
+        <p>חיפוש מקום לדייט לפי קטגוריה</p>
+        <form name="GetAllForm" method="post" action="homePage.html" onsubmit="return getAllPlace();" autocomplete="on">
+            <select id="typeGetAll" name="type" placeholder="סוג " required>
+                <option value="בית קפה">בית קפה</option>
+                <option value="מסעדה">מסעדה</option>
+                <option value="פארק">פארק</option>
+                <option value="מסלול">מסלול</option>
+                <option value="מלון">מלון</option>
+                <option value="טיילת/מצפה">טיילת/מצפה</option>
+                <option value="מוזיאון">מוזיאון</option>
+                <option value="אחר">אחר</option>
+            </select>
+            <button id="submitGet" type="submit">חיפוש</button>
+        </form>
+    </div>
 
     <template id="template_north">
         <table>
@@ -214,6 +266,58 @@
         </div>
     </template>
 
+    <template id="template_sign_in">
+        <title>טופס הרשמה וכניסה</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../style/sign_in_up.css">
+        <link rel="icon" href="../imgs/log-in_icon.png" type="image/x-icon" sizes="60*60"/>
+
+        <div class="wrapper">
+            <div id="sign-in" class="form-wrapper sign-in">
+              <form action="" role="form" onsubmit="signIn(event);" autocomplete="off">
+                <h2>כניסה</h2>
+                <div class="input-group">
+                  <input type="text" id="userName" required>
+                  <label for="">שם משתמש</label>
+                </div>
+                <div class="input-group">
+                  <input type="password" id="pswd" required>
+                  <label for="">סיסמא</label>
+                </div>
+                <div class="remember">
+                  <label><input type="checkbox"> זכור משתמש</label>
+                </div>
+                <button id="signInBtn" type="submit" >כניסה</button>
+                <div class="signUp-link">
+                  <p>עדין אין לך חשבון? <a href="#" class="signUpBtn-link">   הרשמה</a></p>
+                </div>
+              </form>
+            </div>
+        
+            <div class="form-wrapper sign-up">
+              <form action="" role="form" onsubmit="signUp(event);" id="signUpForm">
+                <h2>הרשמה</h2>
+                <div class="input-group">
+                  <input type="text" id="user-name" required>
+                  <label for="">שם משתמש</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" required>
+                  <label for="">אמייל</label>
+                </div>
+                <div class="input-group">
+                  <input type="password" id="pwd" required>
+                  <label for="">סיסמא</label>
+                </div>
+                <button type="submit">הירשם</button>
+                <div class="signUp-link">
+                  <p>יש לך כבר חשבון?  <a href="#" class="signInBtn-link">כניסה</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+    </template>
+
     <script src="../script/homePageIndex.js">
 
 
@@ -231,6 +335,8 @@
     <script src="../script/Network.js"></script>
     <script src="../script/Server.js"></script>
     <script src="../script/DataBase.js"></script>
+    <script src="../script/sign_in_up.js"></script>
+
 
 </body>
 
