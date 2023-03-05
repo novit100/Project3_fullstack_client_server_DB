@@ -4,7 +4,7 @@ var data1;
 var key;
 
 function addPlace() {
-    data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
+    data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["address"].value + document.forms["myForm"]["city"].value;
     data.address = document.forms["myForm"]["address"].value;
     data.name = document.forms["myForm"]["name"].value;
     data.city = document.forms["myForm"]["city"].value;
@@ -16,28 +16,30 @@ function addPlace() {
     data1 = JSON.stringify(data);
 
     key = data.key;
-    const d=new Date()
-    let time =d.getTime();
+    const d = new Date()
+    let time = d.getTime();
 
     var newRequest = new FXMLHttpRequest("POST", key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
 function getPlace() {
-    key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
+    key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
 
-    const d=new Date()
-    let time =d.getTime();
-        console.log(data1);
+    const d = new Date()
+    let time = d.getTime();
+    console.log(data1);
     var newRequest = new FXMLHttpRequest('GET', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
 function getAllPlaces() {
-
-    const d=new Date()
-    let time =d.getTime();
-        var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
+    data.type = document.forms["GetAllForm"]["typeGetAll"].value;
+    data.area = document.forms["GetAllForm"]["areaGetAll"].value;
+    data1 = JSON.stringify(data);
+    const d = new Date()
+    let time = d.getTime();
+    var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
@@ -56,42 +58,60 @@ var pageNow;
 var temp;
 var clon;
 
-function showContent(area) {
-    if (area === 'north' && pageNow != 'north') {
-        pageNow = 'north'
+function showContent(buttonID) {
+    if (buttonID === 'north' && pageNow != 'north') {
+        pageNow = 'north';
+        document.getElementById("home_div").className="hide";
         temp = document.getElementById("template_north");
         document.body.removeChild(document.body.lastElementChild);
-
-
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
-    if (area === 'south' && pageNow != 'south') {
+    if (buttonID === 'south' && pageNow != 'south') {
         pageNow = 'south';
+        document.getElementById("home_div").className="hide";
         temp = document.getElementById("template_south");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
-    if (area === 'center' && pageNow != 'center') {
+    if (buttonID === 'center' && pageNow != 'center') {
         pageNow = 'center';
+        document.getElementById("home_div").className="hide";
         temp = document.getElementById("template_center");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
-    if (area === 'jerusalem' && pageNow != 'jerusalem') {
+    if (buttonID === 'jerusalem' && pageNow != 'jerusalem') {
         pageNow = 'jerusalem';
+        document.getElementById("home_div").className="hide";
         temp = document.getElementById("template_jerusalem");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
     }
-    if (area === 'addNewPlace' && pageNow != 'addNewPlace') {
+    if (buttonID === 'addNewPlace' && pageNow != 'addNewPlace') {
         pageNow = 'addNewPlace';
+        document.getElementById("home_div").className="hide";
         temp = document.getElementById("template_addPlace");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
+    }
+
+    if (buttonID === 'sign-out' && pageNow != 'sign-out') {
+        pageNow = 'sign-out';
+        document.getElementById("home_div").className="hide";
+        temp = document.getElementById("template_sign_in");
+        document.body.removeChild(document.body.lastElementChild);
+        clon = temp.content.cloneNode(true);
+        document.body.appendChild(clon);
+    }
+
+    if (buttonID === 'home-page' && pageNow != 'home-page') {
+        pageNow = 'home-page';
+        document.body.removeChild(document.body.lastElementChild);
+        document.getElementsByClassName("hide").className="home_div_class";
     }
 }

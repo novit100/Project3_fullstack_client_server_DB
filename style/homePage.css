@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     scroll-behavior: smooth;
     align-content: center;
 }
@@ -36,7 +36,7 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 50px;
-    
+
 }
 
 #user-name {
@@ -86,13 +86,16 @@ body {
 
 .navbar__links3 {
     color: #377a88;
-    margin-right: 10px;
+    background-color: rgb(209, 175, 24);
+    margin-top: 10px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 125px;
+    font-size: 1.2rem;
     text-decoration: none;
-    height: 100%;
+    height: 20%;
     transition: all 0.3s ease;
 }
 
@@ -108,7 +111,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 100%;
+    width: 130%;
     height: 100%;
 }
 
@@ -117,6 +120,83 @@ body {
     height: 2.5rem;
     display: flex;
     padding-left: 3px;
+}
+
+/* home */
+#home_div{
+    margin-top: 0;
+    position: relative;
+}
+
+.hide {
+    display: none;
+  }
+
+
+.searchForGet {
+    text-align: center;
+    margin: 30px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
+#nameGet,
+#addressGet,
+#cityGet,
+#typeGetAll,
+#areaGetAll {
+    box-sizing: border-box;
+    height: 40px;
+    width: 270px;
+    border-color: #503306;
+    box-sizing: 5px;
+    background-color: #c4c4c4f6;
+    color: #000;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+    opacity: 0.7;
+    transition-duration: 0.4s;
+    content: initial;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#submitGet {
+    height: 50px;
+    width: 150px;
+    border-color: #503306;
+    box-sizing: 5px;
+    box-sizing: border-box;
+    color: rgb(193, 226, 226);
+    background-color: rgb(45, 138, 125);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#submitGet:hover {
+    background-color: rgb(100, 95, 95);
+    color: blacke;
+}
+
+.searchForGetAll {
+    text-align: center;
+    margin: 140px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
+.tableGet{
+    text-align: center;
+    margin: 250px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: absolute;
 }
 
 

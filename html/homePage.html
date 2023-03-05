@@ -22,7 +22,7 @@
                 </div>
 
                 <li class="navbar__item">
-                    <a href="#" class="navbar__links1" id="home-page">בית</a>
+                    <button onclick="showContent(id)" class="navbar__links2" id="home-page">בית</a>
                 </li>
 
                 <li class="navbar__item">
@@ -41,14 +41,14 @@
                     <button onclick="showContent(id)" class="navbar__links2" id="addNewPlace">הוספת מיקום</button>
                 </li>
                 <li class="navbar__item2">
-                    <a href="sign_in_up.html" class="navbar__links3" id="sign-out">הרשמה/יציאה</a>
+                    <button onclick="showContent(id)" class="navbar__links3" id="sign-out">הרשמה/יציאה</button>
                 </li>
             </ul>
 
         </div>
     </nav>
 
-
+    
 
     <template id="template_north">
         <table>
@@ -215,6 +215,59 @@
         </div>
     </template>
 
+    <template id="template_sign_in">
+        <div id="div_signIn">
+            <title>טופס הרשמה וכניסה</title>
+            <link rel="stylesheet" type="text/css" href="../style/sign_in_up.css">
+            <link rel="icon" href="../imgs/log-in_icon.png" type="image/x-icon" sizes="60*60" />
+
+            <div class="wrapper">
+                <div id="sign-in" class="form-wrapper sign-in">
+                    <form action="" role="form" onsubmit="signIn(event);" autocomplete="off">
+                        <h2>כניסה</h2>
+                        <div class="input-group">
+                            <input type="text" id="userName" required>
+                            <label for="">שם משתמש</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="pswd" required>
+                            <label for="">סיסמא</label>
+                        </div>
+                        <div class="remember">
+                            <label><input type="checkbox"> זכור משתמש</label>
+                        </div>
+                        <button id="signInBtn" type="submit">כניסה</button>
+                        <div class="signUp-link">
+                            <p>עדין אין לך חשבון? <a href="#" class="signUpBtn-link"> הרשמה</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-wrapper sign-up">
+                    <form action="" role="form" onsubmit="signUp(event);" id="signUpForm">
+                        <h2>הרשמה</h2>
+                        <div class="input-group">
+                            <input type="text" id="user-name" required>
+                            <label for="">שם משתמש</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="">אמייל</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="pwd" required>
+                            <label for="">סיסמא</label>
+                        </div>
+                        <button type="submit">הירשם</button>
+                        <div class="signUp-link">
+                            <p>יש לך כבר חשבון? <a href="#" class="signInBtn-link">כניסה</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <script src="../script/homePageIndex.js">
 
 
@@ -232,6 +285,8 @@
     <script src="../script/Network.js"></script>
     <script src="../script/Server.js"></script>
     <script src="../script/DataBase.js"></script>
+    <script src="../script/sign_in_up.js"></script>
+
 
 </body>
 
