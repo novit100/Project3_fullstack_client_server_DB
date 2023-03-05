@@ -4,7 +4,7 @@ var data1;
 var key;
 
 function addPlace() {
-    data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
+    data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["address"].value + document.forms["myForm"]["city"].value;
     data.address = document.forms["myForm"]["address"].value;
     data.name = document.forms["myForm"]["name"].value;
     data.city = document.forms["myForm"]["city"].value;
@@ -16,28 +16,28 @@ function addPlace() {
     data1 = JSON.stringify(data);
 
     key = data.key;
-    const d=new Date()
-    let time =d.getTime();
+    const d = new Date()
+    let time = d.getTime();
 
     var newRequest = new FXMLHttpRequest("POST", key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
 function getPlace() {
-    key = document.forms["myForm"]["name"].value + document.forms["myForm"]["city"].value;
+    key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
 
-    const d=new Date()
-    let time =d.getTime();
-        console.log(data1);
+    const d = new Date()
+    let time = d.getTime();
+    console.log(data1);
     var newRequest = new FXMLHttpRequest('GET', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
 function getAllPlaces() {
 
-    const d=new Date()
-    let time =d.getTime();
-        var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
+    const d = new Date()
+    let time = d.getTime();
+    var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
 
@@ -90,6 +90,14 @@ function showContent(area) {
     if (area === 'addNewPlace' && pageNow != 'addNewPlace') {
         pageNow = 'addNewPlace';
         temp = document.getElementById("template_addPlace");
+        document.body.removeChild(document.body.lastElementChild);
+        clon = temp.content.cloneNode(true);
+        document.body.appendChild(clon);
+    }
+
+    if (area === 'sign-out' && pageNow != 'sign-out') {
+        pageNow = 'sign-out';
+        temp = document.getElementById("template_sign_in");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
         document.body.appendChild(clon);
