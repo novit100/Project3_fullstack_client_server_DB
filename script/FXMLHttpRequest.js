@@ -46,7 +46,7 @@ class FXMLHttpRequest {
                 var temp = JSON.parse(this.data[i]);
 
                 var oTR = document.createElement("TR");
-                oTR.id = i;
+                oTR.id = "tr"+i;
                 var T;
 
                 T = document.createElement("TD");
@@ -70,14 +70,15 @@ class FXMLHttpRequest {
                 T = document.createElement("TD");
                 T.innerText = temp.extra;
                 oTR.appendChild(T);
-                T = document.createElement("TD");
+               // T = document.createElement("TD");
                 //T.id="22";
-                T.innerHTML = '<button id="'+i+'" onclick="deleteRow('+i+')"></button>';
+                //var btid="bt"+i;
+               // T.innerHTML = '<button id="'+btid+'" onclick="deleteRow('+btid+')">מחיקה</button>';
                 //   button2.id="button"+i;
                 //  this.addEvent(button2);
                 // button2.innerText="מחיקה";
                 // T.appendChild(button2);
-                oTR.appendChild(T);
+               // oTR.appendChild(T);
 
                 var oTBody = document.getElementById("bodyTable");
                 oTBody.appendChild(oTR);
@@ -90,6 +91,10 @@ class FXMLHttpRequest {
         }
 
         if (this.method === 'DELETE') {
+            //top.location.reload()
+        }
+
+        if (this.method === 'PUT') {
             //top.location.reload()
         }
     }

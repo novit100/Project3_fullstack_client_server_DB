@@ -92,7 +92,6 @@
                     <th>כשרות</th>
                     <th>אזור בארץ</th>
                     <th>הערות</th>
-                    <th> </th>
                 </thead>
                 <tbody id="bodyTable">
                     <tr id="1">
@@ -103,7 +102,6 @@
                         <td id="tKashroot"></td>
                         <td id="tArea"></td>
                         <td id="tExtra"></td>
-                        <td id=""></td>
                     </tr>
                 </tbody>
             </table>
@@ -236,45 +234,49 @@
 
     <!--form for add new place-->
     <template id="template_addPlace">
-        <div>
-            <p id="sucsessAddPlace"></p>
-        </div>
-        <div class="newPlaceDiv">
-            <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
-                method="post" autocomplete="on">
-                <input id="name" name="name" placeholder=" שם המקום " required>
-                <br />
-                <input id="address" name="address" placeholder="כתובת ">
-                <br />
-                <input id="city" name="city" placeholder="עיר " required>
-                <br />
-                <select id="type" name="type" placeholder="סוג " required>
-                    <option value="בית קפה">בית קפה</option>
-                    <option value="מסעדה">מסעדה</option>
-                    <option value="פארק">פארק</option>
-                    <option value="מסלול">מסלול</option>
-                    <option value="מלון">מלון</option>
-                    <option value="טיילת/מצפה">טיילת/מצפה</option>
-                    <option value="מוזיאון">מוזיאון</option>
-                    <option value="אחר">אחר</option>
+        <div id="divPlace">
 
-                </select>
-                <br />
-                <input id="kashroot" name="kashroot" placeholder="כשרות">
-                <br />
-                <select id="area" name="area" placeholder="אזור בארץ " required>
-                    <option value="צפון">צפון</option>
-                    <option value="דרום">דרום</option>
-                    <option value="מרכז">מרכז</option>
-                    <option value="ירושלים">ירושלים</option>
-                </select>
-                <br />
-                <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70"> </textarea>
-                <br />
-                <button id="submit" type="submit">הוסף מיקום לרשימה</button>
-                <br />
-            </form>
+            <div>
+                <p id="sucsessAddPlace"></p>
+            </div>
+            <div class="newPlaceDiv">
+                <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
+                    method="post" autocomplete="on">
+                    <input id="name" name="name" placeholder=" שם המקום " required>
+                    <br />
+                    <input id="address" name="address" placeholder="כתובת ">
+                    <br />
+                    <input id="city" name="city" placeholder="עיר " required>
+                    <br />
+                    <select id="type" name="type" placeholder="סוג " required>
+                        <option value="בית קפה">בית קפה</option>
+                        <option value="מסעדה">מסעדה</option>
+                        <option value="פארק">פארק</option>
+                        <option value="מסלול">מסלול</option>
+                        <option value="מלון">מלון</option>
+                        <option value="טיילת/מצפה">טיילת/מצפה</option>
+                        <option value="מוזיאון">מוזיאון</option>
+                        <option value="אחר">אחר</option>
+
+                    </select>
+                    <br />
+                    <input id="kashroot" name="kashroot" placeholder="כשרות">
+                    <br />
+                    <select id="area" name="area" placeholder="אזור בארץ " required>
+                        <option value="צפון">צפון</option>
+                        <option value="דרום">דרום</option>
+                        <option value="מרכז">מרכז</option>
+                        <option value="ירושלים">ירושלים</option>
+                    </select>
+                    <br />
+                    <textarea id="extra" name="extra" placeholder="הערות נוספות" rows="5" cols="70"> </textarea>
+                    <br />
+                    <button id="submit" type="submit">הוסף מיקום לרשימה</button>
+                    <br />
+                </form>
+            </div>
         </div>
+
     </template>
 
     <template id="template_sign_in">

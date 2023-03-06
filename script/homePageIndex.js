@@ -43,17 +43,40 @@ function getAllPlaces() {
     newRequest.sendWIthNetwork();
 }
 
-function deleteRow(id) {
-  /*  key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
+function deleteRow() {
+      key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
+  
+      const d = new Date()
+      let time = d.getTime();
+      console.log(data1);
+      var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
+      newRequest.sendWIthNetwork();
+}
+
+function update(id) {
+    key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
+
+    //pageNow = 'addNewPlace';
+    //document.getElementById("home_div").className = "hide";
+    temp = document.getElementById("template_addPlace");
+    //document.body.removeChild(document.body.lastElementChild);
+    clon = temp.content.cloneNode(true);
+    document.body.appendChild(clon);
+
+    document.forms["myForm"]["name"].value;
+
 
     const d = new Date()
     let time = d.getTime();
     console.log(data1);
-    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
+    var newRequest = new FXMLHttpRequest('PUT', key, data1, 0, time);
     newRequest.sendWIthNetwork();
-*/
-var tr = checkbox.parentNode.parentNode.parentNode; 
+}
 
+/*
+    var button1 = document.getElementById(id);
+    var tr = button1.parentNode.parentNode;
+    console.log(tr.id);
     var temp = tr.children;
     var key = temp[0].innerHTML + temp[1].innerHTML + temp[2].innerHTML;
     console.log("row in table: " + key);
