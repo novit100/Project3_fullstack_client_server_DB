@@ -44,19 +44,44 @@ class FXMLHttpRequest {
 
             for (var i = 1; i < this.data.length; i++) {
                 var temp = JSON.parse(this.data[i]);
-                var oTR=document.createElement("TR");
-                var T=document.createElement("tPlace");
+
+                var oTR = document.createElement("TR");
+                oTR.id = i;
+                var T;
+
+                T = document.createElement("TD");
                 T.innerText = temp.name;
                 oTR.appendChild(T);
-                document.createElement("tAddress").innerText = temp.address;
-                document.createElement("tCity").innerText = temp.city;
-                document.createElement("tType").innerText = temp.type;
-                document.createElement("tKashroot").innerText = temp.kashroot;
-                document.createElement("tArea").innerText = temp.area;
-                document.createElement("tExtra").innerText = temp.extra;
-                var oTBody=document.getElementById("bodyTable");
+                T = document.createElement("TD");
+                T.innerText = temp.address;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                T.innerText = temp.city;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                T.innerText = temp.type;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                T.innerText = temp.kashroot;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                T.innerText = temp.area;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                T.innerText = temp.extra;
+                oTR.appendChild(T);
+                T = document.createElement("TD");
+                //T.id="22";
+                T.innerHTML = '<button id="'+i+'" onclick="deleteRow('+i+')"></button>';
+                //   button2.id="button"+i;
+                //  this.addEvent(button2);
+                // button2.innerText="מחיקה";
+                // T.appendChild(button2);
+                oTR.appendChild(T);
+
+                var oTBody = document.getElementById("bodyTable");
                 oTBody.appendChild(oTR);
-            } 
+            }
         }
 
 
@@ -64,6 +89,13 @@ class FXMLHttpRequest {
             document.getElementById("sucsessAddPlace").innerText = "המיקום התווסף בהצלחה, תודה רבה!"
         }
 
+        if (this.method === 'DELETE') {
+            //top.location.reload()
+        }
     }
+
+    // addEvent(button2) {
+    //     button2.addEventListener("click", deleteRow(button2.id));
+    //    }
 
 }

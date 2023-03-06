@@ -43,6 +43,69 @@ function getAllPlaces() {
     newRequest.sendWIthNetwork();
 }
 
+function deleteRow(id) {
+  /*  key = document.forms["GetForm"]["nameGet"].value + document.forms["GetForm"]["addressGet"].value + document.forms["GetForm"]["cityGet"].value;
+
+    const d = new Date()
+    let time = d.getTime();
+    console.log(data1);
+    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
+    newRequest.sendWIthNetwork();
+*/
+var tr = checkbox.parentNode.parentNode.parentNode; 
+
+    var temp = tr.children;
+    var key = temp[0].innerHTML + temp[1].innerHTML + temp[2].innerHTML;
+    console.log("row in table: " + key);
+    document.getElementById("tableGET").deleteRow(tr.id);
+
+    const d = new Date()
+    let time = d.getTime();
+    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
+    newRequest.sendWIthNetwork();
+
+}
+
+
+/*    function deleteRow(id) {
+    var selectedRows = getCheckedBoxes();
+
+    selectedRows.forEach(function (currentValue) {
+        deleteRowByCheckboxId(currentValue.id);
+    });
+
+}
+
+function deleteRowByCheckboxId(CheckboxId) {
+    var checkbox = document.getElementById(CheckboxId);
+    var tr = checkbox.parentNode.parentNode.parentNode; 
+    console.log(tr.id);
+    console.log(CheckboxId);
+    var temp = tr.children;
+    var key = temp[0].innerHTML + temp[1].innerHTML + temp[2].innerHTML;
+    console.log("row in table: " + key);
+    document.getElementById("tableGET").deleteRow(tr.id);
+
+    const d = new Date()
+    let time = d.getTime();
+    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
+    newRequest.sendWIthNetwork();
+}
+
+function getCheckedBoxes() {
+    var inputs = document.getElementsByTagName("input");
+    var checkboxesChecked = [];
+
+    for (var i = 0; i < inputs.length; i++) {
+        // And stick the checked ones onto an array...
+        if (inputs[i].checked) {
+            checkboxesChecked.push(inputs[i]);
+        }
+    }
+    return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+}
+*/
+
 /**
  readyState-
  Holds the status of the XMLHttpRequest.
@@ -61,7 +124,7 @@ var clon;
 function showContent(buttonID) {
     if (buttonID === 'north' && pageNow != 'north') {
         pageNow = 'north';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_north");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -69,7 +132,7 @@ function showContent(buttonID) {
     }
     if (buttonID === 'south' && pageNow != 'south') {
         pageNow = 'south';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_south");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -77,7 +140,7 @@ function showContent(buttonID) {
     }
     if (buttonID === 'center' && pageNow != 'center') {
         pageNow = 'center';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_center");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -85,7 +148,7 @@ function showContent(buttonID) {
     }
     if (buttonID === 'jerusalem' && pageNow != 'jerusalem') {
         pageNow = 'jerusalem';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_jerusalem");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -93,7 +156,7 @@ function showContent(buttonID) {
     }
     if (buttonID === 'addNewPlace' && pageNow != 'addNewPlace') {
         pageNow = 'addNewPlace';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_addPlace");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -102,7 +165,7 @@ function showContent(buttonID) {
 
     if (buttonID === 'sign-out' && pageNow != 'sign-out') {
         pageNow = 'sign-out';
-        document.getElementById("home_div").className="hide";
+        document.getElementById("home_div").className = "hide";
         temp = document.getElementById("template_sign_in");
         document.body.removeChild(document.body.lastElementChild);
         clon = temp.content.cloneNode(true);
@@ -112,6 +175,6 @@ function showContent(buttonID) {
     if (buttonID === 'home-page' && pageNow != 'home-page') {
         pageNow = 'home-page';
         document.body.removeChild(document.body.lastElementChild);
-        document.getElementsByClassName("hide").className="home_div_class";
+        document.getElementsByClassName("hide").className = "home_div_class";
     }
 }

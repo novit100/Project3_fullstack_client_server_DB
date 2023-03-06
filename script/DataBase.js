@@ -10,7 +10,6 @@ class DB {
 
     getItem() {
         this.data = localStorage.getItem(this.key);
-        //console.log("db get: "+this.data+" key: "+this.key);
         this.sendBackToServer();
     }
 
@@ -20,7 +19,6 @@ class DB {
         var j = 0;
         for (var i=0; i<localStorage.length; i++) {
             if (localStorage.key(i)!= "formData" && localStorage.key(i)!= "currentUser") {
-console.log(JSON.parse(localStorage.getItem(localStorage.key(i))).type);
                 if (JSON.parse(localStorage.getItem(localStorage.key(i))).type == temp.type && JSON.parse(localStorage.getItem(localStorage.key(i))).area == temp.area) {
                     record[j] = localStorage.getItem(localStorage.key(i));
                     j++;
@@ -28,7 +26,6 @@ console.log(JSON.parse(localStorage.getItem(localStorage.key(i))).type);
             }
         }
         this.data = record;
-        console.log(record[0]);
         this.sendBackToServer();
     }
 
@@ -41,24 +38,22 @@ console.log(JSON.parse(localStorage.getItem(localStorage.key(i))).type);
                 record[i] = localStorage.getItem(key[i]);
             }
         }
-        console.log(record);
         this.data = record;
-        sendBackToServer();
+        this.sendBackToServer();
     }
 
     setItem() {
         localStorage.setItem(this.key, this.data);
-        sendBackToServer();
+        this.sendBackToServer();
     }
 
     deleteItem() {
         localStorage.removeItem(this.key);
-        sendBackToServer();
+        this.sendBackToServer();
     }
 
     sendBackToServer() {
         var serverRequest = new Server(this.method, this.key, this.data, this.readyState, this.duration, this.responseText);
-        console.log("db: " + this.data);
         serverRequest.readyState = 2;
         serverRequest.sendBackToNetwork();
     }
