@@ -9,13 +9,18 @@
 
 body {
     margin: 0;
-    background-color: rgb(223, 217, 190);
+    background-color: rgb(230, 230, 230); 
 }
 
+.bigFont{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    border-width: 2;
+}
 
 /* nav bar section */
 .navbar {
-    background: #131313;
+    background: #0da3c1;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -56,10 +61,11 @@ body {
 
 .navbar__item {
     height: 80px;
+    border-color:#c4c4c4f6;
 }
 
 .navbar__links1 {
-    color: #377a88;
+    color: #0da3c1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,8 +76,8 @@ body {
 }
 
 .navbar__links2 {
-    color: #377a88;
-    background-color: rgb(223, 217, 190);
+    color: #0da3c1;
+    background-color: rgb(237, 236, 231);
     margin-top: 10px;
     padding: 30px;
     display: flex;
@@ -82,11 +88,13 @@ body {
     text-decoration: none;
     height: 60%;
     transition: all 0.3s ease;
+    border-color: #0da3c1;
+    border-radius: 10%;
 }
 
 .navbar__links3 {
-    color: #377a88;
-    background-color: rgb(209, 175, 24);
+    color: #0da3c1;
+    background-color:  rgb(237, 236, 231);
     margin-top: 10px;
     padding: 30px;
     display: flex;
@@ -95,7 +103,7 @@ body {
     width: 125px;
     font-size: 1.2rem;
     text-decoration: none;
-    height: 20%;
+    height:60%;
     transition: all 0.3s ease;
 }
 
@@ -108,11 +116,12 @@ body {
 }
 
 .user__erea {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: right;
     width: 130%;
     height: 100%;
+   
 }
 
 #user-icon {
@@ -183,7 +192,7 @@ body {
     box-sizing: 5px;
     box-sizing: border-box;
     color: rgb(193, 226, 226);
-    background-color: rgb(45, 138, 125);
+    background-color: #0da3c1;
     padding: 10px;
     border-radius: 4px;
     margin: 10px;
@@ -227,7 +236,7 @@ thead th {
     font-weight: 100;
     letter-spacing: 2px;
     text-align: center;
-    background-color: rgb(25, 99, 89);
+    background-color:#0da3c1;
     border-color: rgb(27, 117, 105);
     color: #FFF;
 }
@@ -291,10 +300,10 @@ td {
 
 #extra {
     box-sizing: border-box;
-    border-color: #503306;
+    border-color: #0da3c1;
     box-sizing: 5px;
     background-color: #c4c4c4f6;
-    color: #000;
+    color:#0da3c1;
     padding: 10px;
     border-radius: 4px;
     margin: 10px;
@@ -313,17 +322,17 @@ td {
 #area,
 #extra,
 #submit:hover {
-    color: rgb(7, 7, 6);
+    color: #0da3c1;
 }
 
 #submit {
     height: 50px;
     width: 500px;
-    border-color: #503306;
+    border-color: #0da3c1;
     box-sizing: 5px;
     box-sizing: border-box;
     color: rgb(193, 226, 226);
-    background-color: rgb(45, 138, 125);
+    background-color:#0da3c1;
     padding: 10px;
     border-radius: 4px;
     margin: 10px;
@@ -406,6 +415,8 @@ td {
         width: 80%;
         height: 80px;
         margin: 0;
+        border-color:0da3c1;
+        
     }
 
     #mobile-menu {

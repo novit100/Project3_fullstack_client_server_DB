@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>choosing game page</title>
     <link rel="stylesheet" href="../style/homePage.css">
+    <link rel="icon" href="../img/dating.png" type="image/x-icon" sizes="60*60"/>
 </head>
 
 <body>
@@ -40,8 +41,8 @@
                 <li class="navbar__item">
                     <button onclick="showContent(id)" class="navbar__links2" id="addNewPlace">הוספת מיקום</button>
                 </li>
-                <li class="navbar__item2">
-                    <button onclick="showContent(id)" class="navbar__links3" id="sign-out">הרשמה/יציאה</button>
+                <li class="navbar__item">
+                    <button onclick="showContent(id)" class="navbar__links2" id="sign-out">הרשמה/יציאה</button>
                 </li>
             </ul>
 
@@ -50,7 +51,9 @@
 
     <div class="home_div_class" id="home_div">
         <div class="searchForGet">
-            <p>חיפוש מקום לדייט: </p>
+            <p>
+                <font size="+2">חיפוש מקום לדייט:</font>
+                </p>
             <form name="GetForm" method="post" autocomplete="on">
                 <input id="nameGet" name="nameGet" placeholder=" שם המקום " required>
                 <input id="addressGet" name="addressGet" placeholder="כתובת ">
@@ -60,7 +63,9 @@
         </div>
 
         <div class="searchForGetAll">
-            <p>חיפוש מקום לדייט לפי קטגוריה</p>
+           <p>
+            <font size="+2">חיפוש מקום חדש לפי קטגוריה:</font>
+            </p>
             <form name="GetAllForm" method="post">
                 <select id="typeGetAll" name="typeGetAll" placeholder="סוג " required>
                     <option value="בית קפה">בית קפה</option>
@@ -233,30 +238,28 @@
 
 
     <!--form for add new place-->
-    <template id="template_addPlace">
-        <div id="divPlace">
-
-            <div>
-                <p id="sucsessAddPlace"></p>
-            </div>
-            <div class="newPlaceDiv">
-                <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
-                    method="post" autocomplete="on">
-                    <input id="name" name="name" placeholder=" שם המקום " required>
-                    <br />
-                    <input id="address" name="address" placeholder="כתובת ">
-                    <br />
-                    <input id="city" name="city" placeholder="עיר " required>
-                    <br />
-                    <select id="type" name="type" placeholder="סוג " required>
-                        <option value="בית קפה">בית קפה</option>
-                        <option value="מסעדה">מסעדה</option>
-                        <option value="פארק">פארק</option>
-                        <option value="מסלול">מסלול</option>
-                        <option value="מלון">מלון</option>
-                        <option value="טיילת/מצפה">טיילת/מצפה</option>
-                        <option value="מוזיאון">מוזיאון</option>
-                        <option value="אחר">אחר</option>
+    <template id="template_addPlace"  >
+        <div>
+            <p id="sucsessAddPlace"></p>
+        </div>
+        <div class="newPlaceDiv">
+            <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
+                method="post" autocomplete="on">
+                <input id="name" name="name" placeholder=" שם המקום " required>
+                <br />
+                <input id="address" name="address" placeholder="כתובת ">
+                <br />
+                <input id="city" name="city" placeholder="עיר " required>
+                <br />
+                <select id="type" name="type" placeholder="סוג " required>
+                    <option value="בית קפה">בית קפה</option>
+                    <option value="מסעדה">מסעדה</option>
+                    <option value="פארק">פארק</option>
+                    <option value="מסלול">מסלול</option>
+                    <option value="מלון">מלון</option>
+                    <option value="טיילת/מצפה">טיילת/מצפה</option>
+                    <option value="מוזיאון">מוזיאון</option>
+                    <option value="אחר">אחר</option>
 
                     </select>
                     <br />
