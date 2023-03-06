@@ -48,7 +48,69 @@
         </div>
     </nav>
 
-    
+    <div class="home_div_class" id="home_div">
+        <div class="searchForGet">
+            <p>חיפוש מקום לדייט: </p>
+            <form name="GetForm" method="post" autocomplete="on">
+                <input id="nameGet" name="nameGet" placeholder=" שם המקום " required>
+                <input id="addressGet" name="addressGet" placeholder="כתובת ">
+                <input id="cityGet" name="cityGet" placeholder="עיר " required>
+                <button onclick="getPlace()" id="submitGet" type="button">חיפוש</button>
+            </form>
+        </div>
+
+        <div class="searchForGetAll">
+            <p>חיפוש מקום לדייט לפי קטגוריה</p>
+            <form name="GetAllForm" method="post">
+                <select id="typeGetAll" name="typeGetAll" placeholder="סוג " required>
+                    <option value="בית קפה">בית קפה</option>
+                    <option value="מסעדה">מסעדה</option>
+                    <option value="פארק">פארק</option>
+                    <option value="מסלול">מסלול</option>
+                    <option value="מלון">מלון</option>
+                    <option value="טיילת/מצפה">טיילת/מצפה</option>
+                    <option value="מוזיאון">מוזיאון</option>
+                    <option value="אחר">אחר</option>
+                </select>
+                <select id="areaGetAll" name="areaGetAll" placeholder="אזור בארץ " required>
+                    <option value="צפון">צפון</option>
+                    <option value="דרום">דרום</option>
+                    <option value="מרכז">מרכז</option>
+                    <option value="ירושלים">ירושלים</option>
+                </select>
+                <button onclick="getAllPlaces()" id="submitGet" type="button">חיפוש</button>
+            </form>
+        </div>
+
+        <div class="tableGet">
+            <table id="tableGET">
+                <thead>
+                    <th>שם המקום</th>
+                    <th>כתובת</th>
+                    <th>עיר</th>
+                    <th>סוג</th>
+                    <th>כשרות</th>
+                    <th>אזור בארץ</th>
+                    <th>הערות</th>
+                    <th> </th>
+                </thead>
+                <tbody id="bodyTable">
+                    <tr id="1">
+                        <td id="tPlace"></td>
+                        <td id="tAddress"></td>
+                        <td id="tCity"></td>
+                        <td id="tType"></td>
+                        <td id="tKashroot"></td>
+                        <td id="tArea"></td>
+                        <td id="tExtra"></td>
+                        <td id=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="deleteRow()" id="" type="button">מחיקה</button>
+            <button onclick="update()" id="" type="button">עדכון</button>
+        </div>
+    </div>
 
     <template id="template_north">
         <table>
