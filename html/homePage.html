@@ -41,8 +41,8 @@
                 <li class="navbar__item">
                     <button onclick="showContent(id)" class="navbar__links2" id="addNewPlace">הוספת מיקום</button>
                 </li>
-                <li class="navbar__item2">
-                    <button onclick="showContent(id)" class="navbar__links3" id="sign-out">הרשמה/יציאה</button>
+                <li class="navbar__item">
+                    <button onclick="showContent(id)" class="navbar__links2" id="sign-out">הרשמה/יציאה</button>
                 </li>
             </ul>
 
@@ -51,7 +51,9 @@
 
     <div class="home_div_class" id="home_div">
         <div class="searchForGet">
-            <p>חיפוש מקום לדייט: </p>
+            <p>
+                <font size="+2">חיפוש מקום לדייט:</font>
+                </p>
             <form name="GetForm" method="post" autocomplete="on">
                 <input id="nameGet" name="nameGet" placeholder=" שם המקום " required>
                 <input id="addressGet" name="addressGet" placeholder="כתובת ">
@@ -61,7 +63,9 @@
         </div>
 
         <div class="searchForGetAll">
-            <p>חיפוש מקום לדייט לפי קטגוריה</p>
+           <p>
+            <font size="+2">חיפוש מקום חדש לפי קטגוריה:</font>
+            </p>
             <form name="GetAllForm" method="post">
                 <select id="typeGetAll" name="typeGetAll" placeholder="סוג " required>
                     <option value="בית קפה">בית קפה</option>
@@ -236,7 +240,7 @@
 
 
     <!--form for add new place-->
-    <template id="template_addPlace">
+    <template id="template_addPlace"  >
         <div>
             <p id="sucsessAddPlace"></p>
         </div>
