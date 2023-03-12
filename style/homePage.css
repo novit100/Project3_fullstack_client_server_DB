@@ -139,6 +139,20 @@ body {
     position: relative;
 }
 
+#divPlace{
+    margin: 30px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.newPlaceDiv{
+    margin: 30px auto 0 auto;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
 .hide {
     display: none;
   }
