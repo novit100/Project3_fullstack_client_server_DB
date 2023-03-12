@@ -33,6 +33,7 @@ body {
 }
 
 .navbar__container {
+    align-items: center;
     display: flex;
     justify-content: right;
     height: 80px;
@@ -106,6 +107,7 @@ body {
     height:60%;
     transition: all 0.3s ease;
 }
+
 
 .navbar__btn {
     display: flex;
@@ -335,6 +337,8 @@ td {
 
 @media screen and (max-width:960px) {
     .navbar_container {
+        align-items: center;
+        text-align: center;
         display: flex;
         justify-content: space-between;
         height: 80px;
