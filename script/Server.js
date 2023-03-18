@@ -31,6 +31,10 @@ class Server {
         if (this.method === 'DELETE') {
             dbRequest.deleteItem();
         }
+
+        if (this.method === 'GETforUPDATE') {
+            dbRequest.getItem();
+        }
     }
 
     sendBackToNetwork() {

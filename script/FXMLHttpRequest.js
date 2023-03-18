@@ -21,6 +21,7 @@ class FXMLHttpRequest {
         let timeNow = d.getTime();
         this.duration = timeNow - this.duration;
 
+        var client=new Client(this.method, this.key, this.data, this.readyState, this.duration);
         if (this.method === 'GET') {
             var temp = JSON.parse(this.data);
             document.getElementById("tPlace").innerText = temp.name;
@@ -92,6 +93,10 @@ class FXMLHttpRequest {
 
         if (this.method === 'DELETE') {
             //top.location.reload()
+        }
+
+        if (this.method === 'GETforUPDATE') {
+            client.update_onload();
         }
 
         if (this.method === 'PUT') {
