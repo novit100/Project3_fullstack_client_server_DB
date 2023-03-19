@@ -57,4 +57,5 @@ class DB {
         serverRequest.readyState = 2;
         serverRequest.sendBackToNetwork();
     }
+
 }

@@ -60,6 +60,8 @@
                 <input id="cityGet" name="cityGet" placeholder="עיר " required>
                 <button onclick="getPlace()" id="submitGet" type="button">חיפוש</button>
                 <button onclick="deleteRow()" id="submitGet" type="button">מחיקה</button>
+                <button onclick="update()" id="" type="button">עריכה</button>
+                <button onclick="submit_update()" id="" type="button">עדכון</button>
             </form>
         </div>
   
@@ -88,6 +90,7 @@
             </form>
         </div>
 
+        <template id="tablePlacesTemplate">
         <div class="tableGet">
             <table id="tableGET">
                 <thead>
@@ -111,9 +114,8 @@
                     </tr>
                 </tbody>
             </table>
-            
-            <button onclick="update()" id="" type="button">עדכון</button>
         </div>
+        </template>
     </div>
 
     <template id="template_north">
@@ -240,9 +242,6 @@
 
     <!--form for add new place-->
     <template id="template_addPlace"  >
-        <div>
-            <p id="sucsessAddPlace"></p>
-        </div>
         <div class="newPlaceDiv">
             <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
                 method="post" autocomplete="on">

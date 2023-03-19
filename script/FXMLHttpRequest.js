@@ -21,7 +21,15 @@ class FXMLHttpRequest {
         let timeNow = d.getTime();
         this.duration = timeNow - this.duration;
 
+        var client = new Client(this.method, this.key, this.data, this.readyState, this.duration);
         if (this.method === 'GET') {
+            pageNow = 'table';
+            temp = document.getElementById("tablePlacesTemplate");
+            document.body.removeChild(document.body.lastElementChild);
+            clon = temp.content.cloneNode(true);
+            document.body.appendChild(clon);
+
+
             var temp = JSON.parse(this.data);
             document.getElementById("tPlace").innerText = temp.name;
             document.getElementById("tAddress").innerText = temp.address;
@@ -33,6 +41,12 @@ class FXMLHttpRequest {
         }
 
         if (this.method === 'GETall') {
+            pageNow = 'table';
+            temp = document.getElementById("tablePlacesTemplate");
+            document.body.removeChild(document.body.lastElementChild);
+            clon = temp.content.cloneNode(true);
+            document.body.appendChild(clon);
+
             var temp = JSON.parse(this.data[0]);
             document.getElementById("tPlace").innerText = temp.name;
             document.getElementById("tAddress").innerText = temp.address;
@@ -46,7 +60,7 @@ class FXMLHttpRequest {
                 var temp = JSON.parse(this.data[i]);
 
                 var oTR = document.createElement("TR");
-                oTR.id = "tr"+i;
+                oTR.id = "tr" + i;
                 var T;
 
                 T = document.createElement("TD");
@@ -70,37 +84,29 @@ class FXMLHttpRequest {
                 T = document.createElement("TD");
                 T.innerText = temp.extra;
                 oTR.appendChild(T);
-               // T = document.createElement("TD");
-                //T.id="22";
-                //var btid="bt"+i;
-               // T.innerHTML = '<button id="'+btid+'" onclick="deleteRow('+btid+')">מחיקה</button>';
-                //   button2.id="button"+i;
-                //  this.addEvent(button2);
-                // button2.innerText="מחיקה";
-                // T.appendChild(button2);
-               // oTR.appendChild(T);
 
                 var oTBody = document.getElementById("bodyTable");
                 oTBody.appendChild(oTR);
+                console.log(oTR.id);
             }
         }
 
-
         if (this.method === 'POST') {
-            document.getElementById("sucsessAddPlace").innerText = "המיקום התווסף בהצלחה, תודה רבה!"
+            alert("המיקום התווסף בהצלחה, תודה רבה!");
         }
 
         if (this.method === 'DELETE') {
-            //top.location.reload()
+            location.reload();
+            alert("המיקום נמחק");
+        }
+
+        if (this.method === 'GETforUPDATE') {
+            client.update_onload();
         }
 
         if (this.method === 'PUT') {
-            //top.location.reload()
+            location.reload();
+            alert("המיקום עודכן בהצלחה");
         }
     }
-
-    // addEvent(button2) {
-    //     button2.addEventListener("click", deleteRow(button2.id));
-    //    }
-
 }
