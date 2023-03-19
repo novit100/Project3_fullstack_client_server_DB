@@ -1,21 +1,26 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+ 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     scroll-behavior: smooth;
     align-content: center;
+    position: relative;
 }
 
 body {
     margin: 0;
+    background-image:url("../img/d.png") ;
     background-color: rgb(230, 230, 230); 
+
 }
 
 .bigFont{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-    border-width: 2;
+    
+    font-size: 30px;
+    border-width: 6;
+    color: #19b6d6;
+    font-weight: 800;
 }
 
 /* nav bar section */
@@ -87,10 +92,10 @@ body {
     width: 125px;
     font-size: 1.2rem;
     text-decoration: none;
-    height: 60%;
+    height: 45%;
     transition: all 0.3s ease;
     border-color: #0da3c1;
-    border-radius: 10%;
+    border-radius:30%;
 }
 
 .navbar__links3 {
@@ -147,10 +152,10 @@ body {
 }
 
 .newPlaceDiv{
-    margin: 30px auto 0 auto;
-    align-items: center;
-    width: 100%;
-    position: absolute;
+   
+    
+    display: inline-block;
+    text-align: center;
 }
 
 .hide {
@@ -163,7 +168,7 @@ body {
     margin: 30px auto 0 auto;
     align-items: center;
     width: 100%;
-    position: absolute;
+    position: relative;
 }
 
 #nameGet,
@@ -210,18 +215,17 @@ body {
 
 .searchForGetAll {
     text-align: center;
-    margin: 140px auto 0 auto;
+    margin: 30px auto 0 auto;
     align-items: center;
     width: 100%;
-    position: absolute;
+    position:relative;
 }
 
 .tableGet{
     text-align: center;
-    margin: 250px auto 0 auto;
     align-items: center;
     width: 100%;
-    position: absolute;
+    position:relative;
 }
 
 
@@ -262,10 +266,10 @@ td {
 /*form -add new place*/
 .newPlaceDiv {
     text-align: center;
-    margin: 250px auto 0 auto;
+    margin: 100px auto 0 auto;
     align-items: center;
     width: 100%;
-    position: absolute;
+    position: relative;
 
 }
 
@@ -275,7 +279,7 @@ td {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     align-items: center;
     margin-top: 250px auto 0 auto;
-    position: absolute;
+    position: relative;
 }
 
 #name,
@@ -367,7 +371,7 @@ td {
         grid-template-columns: auto;
         margin: 0;
         width: 100%;
-        position: absolute;
+        position: relative;
         top: -1000px;
         opacity: 1;
         transition: all 0.5s ease;
@@ -424,7 +428,7 @@ td {
     }
 
     #mobile-menu {
-        position: absolute;
+        position: relative;
         top: 20%;
         right: 5%;
         transform: translate(5%, 20%);

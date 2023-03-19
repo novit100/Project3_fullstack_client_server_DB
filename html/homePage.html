@@ -51,23 +51,26 @@
 
     <div class="home_div_class" id="home_div">
         <div class="searchForGet">
-            <p>
-                <font size="+2">חיפוש מקום לדייט:</font>
-                </p>
+            <p class="bigFont">
+                <font>חיפוש מקום לדייט</font>
+                
+            </p>
             <form name="GetForm" method="post" autocomplete="on">
                 <input id="nameGet" name="nameGet" placeholder=" שם המקום " required>
                 <input id="addressGet" name="addressGet" placeholder="כתובת ">
                 <input id="cityGet" name="cityGet" placeholder="עיר " required>
+            <p>
                 <button onclick="getPlace()" id="submitGet" type="button">חיפוש</button>
                 <button onclick="deleteRow()" id="submitGet" type="button">מחיקה</button>
-                <button onclick="update()" id="" type="button">עריכה</button>
-                <button onclick="submit_update()" id="" type="button">עדכון</button>
+                <button onclick="update()" id="submitGet" type="button">עריכה</button>
+                <button onclick="submit_update()" id="submitGet" type="button">עדכון</button>
+            </p>
             </form>
         </div>
   
         <div class="searchForGetAll">
-           <p>
-            <font size="+2">חיפוש מקום חדש לפי קטגוריה:</font>
+           <p class="bigFont">
+            <font>חיפוש מקום חדש לפי קטגוריה</font>
             </p>
             <form name="GetAllForm" method="post">
                 <select id="typeGetAll" name="typeGetAll" placeholder="סוג " required>
@@ -243,8 +246,11 @@
     <!--form for add new place-->
     <template id="template_addPlace"  >
         <div class="newPlaceDiv">
-            <form name="myForm" class="newPlace" method="post" action="homePage.html" onsubmit="return addPlace();"
-                method="post" autocomplete="on">
+            <p class="bigFont">
+                <font>הוספת מקום חדש</font>
+            </p>
+            <form name="myForm" method="post" action="homePage.html" onsubmit="return addPlace();"
+                method="post" autocomplete="on" >
                 <input id="name" name="name" placeholder=" שם המקום " required>
                 <br />
                 <input id="address" name="address" placeholder="כתובת ">
