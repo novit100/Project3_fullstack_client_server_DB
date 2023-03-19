@@ -73,6 +73,7 @@ function getAllPlaces() {
     let time = d.getTime();
     var newRequest = new FXMLHttpRequest('GETall', key, data1, 0, time);
     newRequest.sendWIthNetwork();
+
 }
 
 function deleteRow() {

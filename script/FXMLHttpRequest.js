@@ -20,6 +20,7 @@ class FXMLHttpRequest {
         const d = new Date()
         let timeNow = d.getTime();
         this.duration = timeNow - this.duration;
+           //location.reload();
 
         var client=new Client(this.method, this.key, this.data, this.readyState, this.duration);
         if (this.method === 'GET') {
@@ -42,10 +43,21 @@ class FXMLHttpRequest {
             document.getElementById("tKashroot").innerText = temp.kashroot;
             document.getElementById("tArea").innerText = temp.area;
             document.getElementById("tExtra").innerText = temp.extra;
+            
+           /**  var count;
+            var oTBody;
+            for (var i = 0; i < count; i++) {
+                oTBody = document.getElementById("bodyTable");
+                oTR=document.getElementById("tr"+i);
+                oTBody.removeChild(oTR);
+            }
+            count=0;
+*/
 
             for (var i = 1; i < this.data.length; i++) {
                 var temp = JSON.parse(this.data[i]);
-
+                //count=i;
+                
                 var oTR = document.createElement("TR");
                 oTR.id = "tr"+i;
                 var T;
@@ -83,6 +95,7 @@ class FXMLHttpRequest {
 
                 var oTBody = document.getElementById("bodyTable");
                 oTBody.appendChild(oTR);
+                console.log(oTR.id);
             }
         }
 
