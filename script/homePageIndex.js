@@ -26,8 +26,7 @@ class Client {
         document.forms["myForm"]["type"].value=data11.type;
         document.forms["myForm"]["area"].value=data11.area;
     }
-    
-    }
+}
 
 
 
@@ -96,7 +95,7 @@ function update() {
 }
 
 function submit_update(){
-    data.key = document.forms["myForm"]["name"].value + document.forms["myForm"]["address"].value + document.forms["myForm"]["city"].value;
+    data.key= document.forms["myForm"]["name"].value + document.forms["myForm"]["address"].value + document.forms["myForm"]["city"].value;
     data.address = document.forms["myForm"]["address"].value;
     data.name = document.forms["myForm"]["name"].value;
     data.city = document.forms["myForm"]["city"].value;
@@ -104,72 +103,14 @@ function submit_update(){
     data.extra = document.forms["myForm"]["extra"].value;
     data.type = document.forms["myForm"]["type"].value;
     data.area = document.forms["myForm"]["area"].value;
-    /* /קיים בדיקה אם המפתח ייחודי*/
+    
+    const d = new Date()
+   let time = d.getTime();
+    key =data.key;
     data1 = JSON.stringify(data);
-
-
-    console.log(data1);
     var newRequest = new FXMLHttpRequest('PUT', key, data1, 0, time);
     newRequest.sendWIthNetwork();
 }
-
-    
-
-/*
-    var button1 = document.getElementById(id);
-    var tr = button1.parentNode.parentNode;
-    console.log(tr.id);
-    var temp = tr.children;
-    var key = temp[0].innerHTML + temp[1].innerHTML + temp[2].innerHTML;
-    console.log("row in table: " + key);
-    document.getElementById("tableGET").deleteRow(tr.id);
-
-    const d = new Date()
-    let time = d.getTime();
-    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
-    newRequest.sendWIthNetwork();
-
-}
-
-
-/*    function deleteRow(id) {
-    var selectedRows = getCheckedBoxes();
-
-    selectedRows.forEach(function (currentValue) {
-        deleteRowByCheckboxId(currentValue.id);
-    });
-
-}
-
-function deleteRowByCheckboxId(CheckboxId) {
-    var checkbox = document.getElementById(CheckboxId);
-    var tr = checkbox.parentNode.parentNode.parentNode; 
-    console.log(tr.id);
-    console.log(CheckboxId);
-    var temp = tr.children;
-    var key = temp[0].innerHTML + temp[1].innerHTML + temp[2].innerHTML;
-    console.log("row in table: " + key);
-    document.getElementById("tableGET").deleteRow(tr.id);
-
-    const d = new Date()
-    let time = d.getTime();
-    var newRequest = new FXMLHttpRequest('DELETE', key, data1, 0, time);
-    newRequest.sendWIthNetwork();
-}
-
-function getCheckedBoxes() {
-    var inputs = document.getElementsByTagName("input");
-    var checkboxesChecked = [];
-
-    for (var i = 0; i < inputs.length; i++) {
-        // And stick the checked ones onto an array...
-        if (inputs[i].checked) {
-            checkboxesChecked.push(inputs[i]);
-        }
-    }
-    return checkboxesChecked.length > 0 ? checkboxesChecked : null;
-}
-*/
 
 /**
  readyState-

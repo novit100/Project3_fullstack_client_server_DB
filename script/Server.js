@@ -11,7 +11,6 @@ class Server {
     open() {
         var dbRequest = new DB(this.method, this.key, this.data, this.readyState, this.duration);
         dbRequest.readyState = 1;
-        console.log("server get: "+" key: "+this.key);
 
         if (this.method === 'GET') {
             dbRequest.getItem();
