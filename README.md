@@ -8,7 +8,8 @@
 •Rest API <br>
 •VS code <br>
 
-<br><br><br><br>
+<br><br>
+**In Detail:**
 **Client** - a client-side application for accessing and changing information stored on the server
 • Login screen - existing user, checking form, verifying details (against the registration database)<br>
 • Registration screen - new user, checking form, verifying details (against the registration database)<br>
